@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
-  def self.fing_by_category(category)
-    current_category_id = Category.where(title: category).id
-    Test.order('id DESC').where(category_id: current_category_id).pluck(:title)
+  def self.find_by_category(category)
+    Test.joins("JOIN categories ON tests.category_id = categories.id AND categories.title = '#{category}'")
+        .order('tests.id DESC').pluck(:title)
   end
 end

@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(name: "Вадим")
-Category.create(title: "Математика")
-Test.create(title: "Таблица умножения", category_id: Category.first.id)
-Question.create(body: "Сколько будет дважды два?", test_id: Test.first.id)
-Answer.create([{body: "4", correct: true, question_id: Question.first.id},
-               {body: "3", question_id: Question.first.id},
-               {body: "5", question_id: Question.first.id}])
+initial_category = Category.create(title: "Математика")
+initial_test = Test.create(title: "Таблица умножения", category_id: initial_category.id)
+initial_question = Question.create(body: "Сколько будет дважды два?", test_id: initial_test.id)
+Answer.create([{body: "4", correct: true, question_id: initial_question.id},
+               {body: "3", question_id: initial_question.id},
+               {body: "5", question_id: initial_question.id}])
