@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  @passed_tests = []
+
+  has_and_belongs_to_many :tests
 
   def passed_tests_by_level(level)
-    @passed_tests.select { |test| test.level == level }
+    self.tests.where(level: level)
   end
 end
