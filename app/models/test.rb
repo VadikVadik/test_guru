@@ -10,11 +10,14 @@ class Test < ApplicationRecord
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :find_by_category, -> (category) { joins("JOIN categories ON tests.category_id = categories.id")
-                                           .where(categories: { title: category })
-                                           .order('tests.id DESC').pluck(:title) }
+                                           .where(categories: { title: category })}
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
+
+  def self.find_test_by_category (category)
+    find_by_category(category).order('tests.id DESC').pluck(:title)
+  end
 
 end
