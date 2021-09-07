@@ -8,11 +8,11 @@ class TestsController < ApplicationController
   end
 
   def show
-    @test
+
   end
 
   def edit
-    @test
+    
   end
 
   def new

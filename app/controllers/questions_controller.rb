@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question
+
   end
 
   def new
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question
+    
   end
 
   def update
