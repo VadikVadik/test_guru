@@ -6,16 +6,11 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render inline: '<h1>All questions of test: <%= @test.title %></h1>
-                    <ol><% @test.questions.pluck(:body).each do |question| -%>
-                      <%= content_tag :li, question %>
-                    <% end -%></ol>'
+    redirect_to @test
   end
 
   def show
-    render inline: '<h1>Test: <%= @question.test.title %></h1>
-                    <h3>Question:</h3>
-                    <p><%= @question.body %></p>'
+
   end
 
   def new
@@ -26,15 +21,24 @@ class QuestionsController < ApplicationController
     question = @test.questions.new(question_params)
 
     if question.save
-      render inline: '<p>Question "<%= params[:question][:body] %>" successfully created</p>'
+      redirect_to @test
     else
-      render html: '<p>Something went wrong...</p>'
+      render :new
     end
+  end
+
+  def edit
+    
+  end
+
+  def update
+    @question.update(question_params)
+    redirect_to test_questions_path(@question.test)
   end
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path
+    redirect_to test_questions_path(@question.test)
   end
 
   private
