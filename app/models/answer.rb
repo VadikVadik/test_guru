@@ -8,6 +8,6 @@ class Answer < ApplicationRecord
 
   def answers_count_control
     errors.add(:question_id, "A question cannot have more than 4 possible answers") if
-      self.question.answers.size > 3
+      self.question.answers.size > 4
   end
 end
