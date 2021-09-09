@@ -1,0 +1,11 @@
+<h1>The <%= @test_passage.test.title %> Test was completed!</h1>
+<% if print_result(@test_passage) >= 85 %>
+  <p>You have successfully passed the test!</p>
+  <p class="positive_result">Your result: <%= print_result(@test_passage) %>%</p>
+<% else %>
+  <p>You didn't pass the test.</p>
+  <p class="negative_result">Your result: <%= print_result(@test_passage) %>%</p>
+<% end %>
+<div>
+  <%= link_to "All tests", tests_path %>
+</div>
