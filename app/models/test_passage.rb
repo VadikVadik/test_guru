@@ -11,7 +11,8 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= 85
+    positive_result = 85
+    result >= positive_result
   end
 
   def accept!(answer_ids)
