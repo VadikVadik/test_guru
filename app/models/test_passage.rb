@@ -10,12 +10,24 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def success?
+    result >= 85
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
 
     save
+  end
+
+  def result
+    (correct_questions.to_f / test.questions.count * 100).round
+  end
+
+  def current_question_number
+    test.questions.order(:id).index(current_question) + 1
   end
 
   private
