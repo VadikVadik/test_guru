@@ -6,13 +6,14 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  POSITIVE_RESULT = 85
+
   def completed?
     current_question.nil?
   end
 
   def success?
-    positive_result = 85
-    result >= positive_result
+    result >= POSITIVE_RESULT
   end
 
   def accept!(answer_ids)
