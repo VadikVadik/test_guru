@@ -6,8 +6,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
 
-  validates :email, uniqueness: true
-  validates :email, format: { with: /\w+[@]{1}\w+[\.]{1}\w+/, message: "Email must contain an @ and a dot" }
+  validates :name, :email, presence: { message: "must be given please" }
+  validates :email, uniqueness: true,
+                    format: { with: /\w+[@]{1}\w+[\.]{1}\w+/, message: "must contain an @ and a dot" }
 
   has_secure_password
 
