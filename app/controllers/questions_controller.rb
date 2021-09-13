@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :find_test, only: [:index, :create, :new]
   before_action :find_question, only: [:edit, :show, :update, :destroy]
 
@@ -28,7 +29,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update

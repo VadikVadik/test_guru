@@ -1,0 +1,10 @@
+<header>
+  <div class="logo">
+    <%= content_tag :a, "TestGuru", href: root_path  %>
+  </div>
+  <% if logged_in? %>
+    <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru! | <%= link_to "Logout", logout_path %></p>
+  <% else %>
+    <p class="nav">Welcome to TestGuru! | <%= link_to "SignUp", signup_path %> | <%= link_to "Login", login_path %></p>
+  <% end %>
+</header>
