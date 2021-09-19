@@ -1,2 +1,82 @@
 ru:
   hello: "Привет"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    select:
+      prompt: "Выбрать категорию"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      category: "Категория"
+      level: "Уровень сложности"
+      questions: "Вопросы"
+      action: "Действие"
+    _test:
+      start: "Начать"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен!"
+      success: "Вы успешно прошли тест!"
+      fail: "Вы провалили тест."
+      result: "Ваш результат: %{total}%"
+      all: "Все тесты"
+    show:
+      header: "Прохождение теста: %{title}"
+      question: "Вопрос %{current_question} из %{questions_amount}"
+      next: "Следующий вопрос"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      update:
+        success: "Тест обновлен"
+      destroy:
+        success: "Тест был удален"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      index:
+        header: "Доступные тесты"
+        new: "Создать новый тест"
+        title: "Название"
+        category: "Категория"
+        level: "Уровень сложности"
+        questions: "Вопросы"
+        action: "Действия"
+      _test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      show:
+        header: "Тест: %{title}"
+        add_question: "Добавить вопрос"
+        category: "Категория"
+        level: "Уровень сложности"
+        questions: "Вопросы"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+        back: "Назад"
+      edit:
+        header: "Редактирование теста"
+        back: "Назад"
+
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
