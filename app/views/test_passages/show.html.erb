@@ -1,16 +1,28 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<p><%= t('.question', current_question: @test_passage.current_question_number, questions_amount: @test_passage.test.questions.count) %></p>
-<p><b><%= @test_passage.current_question.body %></b></p>
+<div class="row justify-content-center">
+  <div class="col col-md-10">
+    <div class="card text-center">
+      <div class="card-header">
+        <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+      </div>
+      <div class="card-body">
+        <p class="text-muted"><%= t('.question', current_question: @test_passage.current_question_number, questions_amount: @test_passage.test.questions.count) %></p>
+        <h2 class="card-title"><%= @test_passage.current_question.body %></h2>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids,
-                                  @test_passage.current_question.answers,
-                                  :id, :body,
-                                  include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
-  <p><%= form.submit t('.next') %></p>
-<% end %>
+        <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+          <%= form.collection_check_boxes :answer_ids,
+                                          @test_passage.current_question.answers,
+                                          :id, :body,
+                                          include_hidden: false do |b| %>
+            <div class="form-check">
+              <%= b.label class: 'form-check-label' do %>
+                <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
+                  <%= "#{b.object.body}" %>
+              <% end %>
+            </div>
+          <% end %>
+          <p><%= form.submit t('.next'), class: 'btn btn-outline-dark' %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,6 +33,7 @@ ru:
       user:
         name: "Никнейм"
         email: "Электронная почта"
+        password: "Пароль"
         first_name: "Имя"
         last_name: "Фамилия"
         created_at: "Создан"

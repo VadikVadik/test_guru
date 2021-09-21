@@ -33,6 +33,7 @@ en:
       user:
         name: "Nickname"
         email: "Email"
+        password: "Password"
         first_name: "First name"
         last_name: "Last name"
         created_at: "Created"
