@@ -1,0 +1,43 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      category: "Категория"
+      user: "Пользователь"
+      admin: "Администратор"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        category_id: "Категория"
+        author_id: "Автор"
+      question:
+        body: "Текст вопроса"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        test_id: "Тест"
+      answer:
+        body: "Текст ответа"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        question_id: "Вопрос"
+      category:
+        title: "Название"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+      user:
+        name: "Никнейм"
+        email: "Электронная почта"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"

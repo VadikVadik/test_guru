@@ -1,33 +1,81 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    select:
+      prompt: "Choose category"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions: "Questions"
+      action: "Action"
+    _test:
+      start: "Go"
+
+  test_passages:
+    result:
+      header: "Test %{title} was completed!"
+      success: "You have successfully passed the test!"
+      fail: "You didn't pass the test."
+      result: "Your result: %{total}%"
+      all: "All tests"
+    show:
+      header: "Passing the %{title} Test"
+      question: "Question %{current_question} of %{questions_amount}"
+      next: "Next"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      update:
+        success: "Test was updated"
+      destroy:
+        success: "Test was deleted"
+      new:
+        header: "Create new test"
+        back: "Back"
+      index:
+        header: "Tricky tests"
+        new: "Create new test"
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions: "Questions"
+        action: "Actions"
+      _test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      show:
+        header: "Test: %{title}"
+        add_question: "Add question"
+        category: "Category"
+        level: "Level"
+        questions: "Questions"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+        back: "Back"
+      edit:
+        header: "Edit test"
+        back: "Back"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"

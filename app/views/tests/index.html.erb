@@ -1,12 +1,12 @@
-<h1>All Tests of Test-Guru:</h1>
+<h1><%= t('tests.index.header') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Category</th>
-    <th>Level</th>
-    <th>Questions</th>
-    <th>Action</th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.questions') %></th>
+    <th><%= t('.action') %></th>
   </tr>
   <%= render @tests %>
 </table>
