@@ -1,6 +1,0 @@
-<header>
-  <div class="logo">
-    <%= content_tag :a, "Admin | TestGuru", href: admin_tests_path  %>
-  </div>
-    <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru! | <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-</header>

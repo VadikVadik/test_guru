@@ -1,11 +1,22 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<% if @test_passage.success? %>
-  <p><%= t('.success') %></p>
-  <p class="positive_result"><%= t('.result', total: @test_passage.result) %></p>
-<% else %>
-  <p><%= t('.fail') %></p>
-  <p class="negative_result"><%= t('.result', total: @test_passage.result) %></p>
-<% end %>
-<div>
-  <%= link_to t('.all'), tests_path %>
+<div class="row justify-content-center">
+  <div class="col col-md-10">
+    <div class="card text-center">
+      <h1 class="card-header">
+        <%= t('.header', title: @test_passage.test.title) %>
+      </h1>
+      <% if @test_passage.success? %>
+      <div class="card-body">
+        <p><%= t('.success') %></p>
+        <p class="text-success"><%= t('.result', total: @test_passage.result) %></p>
+      </div>
+      <% else %>
+      <div class="card-body">
+        <p><%= t('.fail') %></p>
+        <p class="text-danger"><%= t('.result', total: @test_passage.result) %></p>
+      </div>
+      <% end %>
+      <%= link_to t('.all'), tests_path, class: 'btn btn-outline-dark' %>
+    </div>
+
+  </div>
 </div>
