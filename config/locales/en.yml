@@ -36,6 +36,10 @@ en:
       header: "Passing the %{title} Test"
       question: "Question %{current_question} of %{questions_amount}"
       next: "Next"
+      gist: "Gist question"
+    gist:
+      success: "Gist saved"
+      failure: "Gist not saved"
 
   admin:
     tests:
