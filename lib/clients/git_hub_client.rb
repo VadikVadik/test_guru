@@ -1,18 +1,15 @@
 class GitHubClient
 
-  ROOT_ENDPOINT = 'https://api.github.com'
-  ACCESS_TOKEN = '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'
-
   def initialize
-    @http_client = setup_http_client
+    @octokit_client = Octokit::Client.new(:access_token => ENV['GIST_TOKEN'])
+  end
+
+  def octokit_client
+    @octokit_client
   end
 
   def create_gist(params)
-    @http_client.post('gists') do |request|
-      request.headers['Authorization'] = "token #{ACCESS_TOKEN}"
-      request.headers['Content-Type'] = 'application/json'
-      request.body = params.to_json
-    end
+    @octokit_client.create_gist(params)
   end
 
   private

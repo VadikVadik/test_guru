@@ -1,0 +1,5 @@
+<tr class="table-warning">
+  <td><%= link_to "#{Question.find(gist[:question_id]).body[0..24]}...", admin_question_path(Question.find(gist[:question_id])), target: :blank %></td>
+  <td><%= link_to gist.url, gist.url, target: :blank %></td>
+  <td><%= gist.user.email %></td>
+</tr>
