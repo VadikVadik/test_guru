@@ -3,7 +3,8 @@
   <p class="h1 text-center">Admin Panel</p>
   <span class="navbar-text">
     <% if user_signed_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru! | <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru! | <%= link_to "Gists", admin_gists_path %>
+                                                                          | <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
     <% else %>
       <p class="nav">Welcome to TestGuru! | <%= link_to "SignUp", new_user_registration_path %> | <%= link_to "Login", new_user_session_path %></p>
     <% end %>

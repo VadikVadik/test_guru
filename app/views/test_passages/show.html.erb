@@ -20,6 +20,7 @@
               <% end %>
             </div>
           <% end %>
+          <p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-warning' %></p>
           <p><%= form.submit t('.next'), class: 'btn btn-outline-dark' %></p>
         <% end %>
       </div>

@@ -36,6 +36,10 @@ ru:
       header: "Прохождение теста: %{title}"
       question: "Вопрос %{current_question} из %{questions_amount}"
       next: "Следующий вопрос"
+      gist: "Добавить вопрос в Gist"
+    gist:
+      success: "Gist усешно сохранен: %{url}"
+      failure: "Во время сохранения Gist произошла ошибка"
 
   admin:
     tests:
@@ -75,6 +79,15 @@ ru:
       edit:
         header: "Редактирование теста"
         back: "Назад"
+    gists:
+      index:
+        header: "Gists"
+        question: "Вопрос"
+        gist_url: "Gist URL"
+        author_email: "Электронная почта автора"
+  services:
+    gist_question_service:
+      description: "Вопрос из теста %{test} приложения TestGuru"
 
 
   tests_mailer:

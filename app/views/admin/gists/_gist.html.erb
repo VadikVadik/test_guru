@@ -1,0 +1,5 @@
+<tr class="table-warning">
+  <td><%= link_to gist.question.body.truncate(25), admin_question_path(gist.question), target: :blank %></td>
+  <td><%= link_to gist.url, gist.url, target: :blank %></td>
+  <td><%= gist.user.email %></td>
+</tr>
