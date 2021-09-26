@@ -32,6 +32,9 @@ gem 'octokit', '~> 4.0'
 #Networking
 gem 'faraday'
 
+#UI
+gem 'octicons_helper'
+
 #AUTH
 gem 'devise', '~> 4.0'
 
