@@ -1,10 +1,11 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :find_test, only: %i[ show edit update destroy ]
+  before_action :set_tests, only: %i[ index update_inline ]
+  before_action :find_test, only: %i[ show edit update update_inline destroy ]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @tests = Test.all
+
   end
 
   def show
@@ -21,7 +22,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = current_user.created_tests.new(test_params)
-    
+
     if @test.save
       redirect_to admin_tests_path, notice: t('.success')
     else
@@ -37,6 +38,14 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path, notice: t('.success')
+    else
+      render :index
+    end
+  end
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: t('.success')
@@ -46,6 +55,10 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def set_tests
+    @tests = Test.all
   end
 
   def find_test
