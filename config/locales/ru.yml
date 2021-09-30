@@ -79,6 +79,8 @@ ru:
       edit:
         header: "Редактирование теста"
         back: "Назад"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         header: "Gists"

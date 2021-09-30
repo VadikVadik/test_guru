@@ -79,6 +79,8 @@ en:
       edit:
         header: "Edit test"
         back: "Back"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Gists"
