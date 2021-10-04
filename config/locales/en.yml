@@ -14,6 +14,15 @@ en:
         level: "Level"
         category_id: "Category"
 
+  users:
+    feedback:
+      new:
+        header: "Feedback form"
+        back: "Back"
+      form:
+        message: "Text"
+        submit: "Send feedback"
+
   tests:
     index:
       header: "Tricky tests"
