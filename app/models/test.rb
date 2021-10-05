@@ -1,8 +1,8 @@
 class Test < ApplicationRecord
 
-  has_many :test_passages, dependent: :delete_all
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
-  has_many :questions, dependent: :delete_all
+  has_many :questions, dependent: :destroy
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
@@ -18,11 +18,6 @@ class Test < ApplicationRecord
 
   def self.find_test_by_category (category)
     find_by_category(category).order('tests.id DESC').pluck(:title)
-  end
-
-  def before_destroy
-    self.questions.each { |question| question.destroy }
-    self.test_passages.each { |test_passage| test_passage.destroy }
   end
 
 end
