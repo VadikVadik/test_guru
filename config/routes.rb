@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users, path: :gurus do
-    get 'feedback', to: 'feedback#new'
-    post 'feedback', to: 'feedback#create'
+    resources :feedbacks, only: [:new, :create]
   end
 
   namespace :admin do

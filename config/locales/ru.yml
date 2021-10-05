@@ -15,7 +15,7 @@ ru:
         category_id: "Категория"
 
   users:
-    feedback:
+    feedbacks:
       new:
         header: "Форма обратной связи"
         back: "Назад"
