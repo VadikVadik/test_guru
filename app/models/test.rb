@@ -20,4 +20,8 @@ class Test < ApplicationRecord
     find_by_category(category).order('tests.id DESC').pluck(:title)
   end
 
+  def destroy_test_passages
+    self.test_passages.each { |test_passage| test_passage.destroy }
+  end
+
 end

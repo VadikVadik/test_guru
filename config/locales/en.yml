@@ -46,6 +46,9 @@ en:
       question: "Question %{current_question} of %{questions_amount}"
       next: "Next"
       gist: "Gist question"
+      no_questions: "No questions added for the %{title} test"
+      back: "Back"
+      no_answer_checked: "You need to choose an answer option"
     gist:
       success: "Gist saved"
       failure: "Gist not saved"

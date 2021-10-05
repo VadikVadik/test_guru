@@ -18,7 +18,7 @@ class Admin::AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
@@ -26,15 +26,16 @@ class Admin::AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer
+      redirect_to admin_question_path(@answer.question)
     else
       render :edit
     end
   end
 
   def destroy
+    @question = @answer.question
     @answer.destroy
-    redirect_to @answer.question
+    redirect_to admin_question_path(@question)
   end
 
   private

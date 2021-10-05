@@ -5,18 +5,22 @@
         <h1><%= t('.header', title: @test_passage.test.title) %></h1>
       </div>
       <div class="card-body">
-        <p class="text-muted"><%= t('.question', current_question: @test_passage.current_question_number, questions_amount: @test_passage.test.questions.count) %></p>
-        <%= content_tag :progress, 'Progress',
-                                   class: 'progress-bar',
-                                   data: { q_number_id: @test_passage.current_question_number },
-                                   max: @test_passage.test.questions.count %>
-        <h2 class="card-title"><%= @test_passage.current_question.body %></h2>
+        <% if params[:answer_ids].nil? && self.request.referer != root_url && self.request.referer != tests_url %>
+          <div class="alert alert-danger" role="alert"><%= t('.no_answer_checked') %></div>
+        <% end %>
+        <% if @test_passage.test.questions.count > 0 %>
+          <p class="text-muted"><%= t('.question', current_question: @test_passage.current_question_number, questions_amount: @test_passage.test.questions.count) %></p>
+          <%= content_tag :progress, 'Progress',
+                                      class: 'progress-bar',
+                                      data: { q_number_id: @test_passage.current_question_number },
+                                      max: @test_passage.test.questions.count %>
+          <h2 class="card-title"><%= @test_passage.current_question.body %></h2>
 
-        <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-          <%= form.collection_check_boxes :answer_ids,
-                                          @test_passage.current_question.answers,
-                                          :id, :body,
-                                          include_hidden: false do |b| %>
+          <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+            <%= form.collection_check_boxes :answer_ids,
+                                            @test_passage.current_question.answers,
+                                            :id, :body,
+                                            include_hidden: false do |b| %>
             <div class="form-check">
               <%= b.label class: 'form-check-label' do %>
                 <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
@@ -26,6 +30,10 @@
           <% end %>
           <p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-warning' %></p>
           <p><%= form.submit t('.next'), class: 'btn btn-outline-dark' %></p>
+        <% end %>
+        <% else %>
+          <p><%= t('.no_questions', title: @test_passage.test.title) %></p>
+          <p><%= link_to t('.back'), root_path %></p>
         <% end %>
       </div>
     </div>

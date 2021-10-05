@@ -46,6 +46,9 @@ ru:
       question: "Вопрос %{current_question} из %{questions_amount}"
       next: "Следующий вопрос"
       gist: "Добавить вопрос в Gist"
+      no_questions: "Для теста %{title} не добавлены вопросы"
+      back: "Назад"
+      no_answer_checked: "Необходимо выбрать вариант ответа"
     gist:
       success: "Gist усешно сохранен: %{url}"
       failure: "Во время сохранения Gist произошла ошибка"
