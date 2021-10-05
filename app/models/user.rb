@@ -4,10 +4,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :delete_all
   has_many :tests, through: :test_passages
-  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
-  has_many :gists
+  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :delete_all
+  has_many :gists, dependent: :delete_all
 
   validates :email, presence: { message: "must be given please" },
                     uniqueness: true,
