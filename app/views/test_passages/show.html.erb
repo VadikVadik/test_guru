@@ -35,6 +35,12 @@
           <p><%= t('.no_questions', title: @test_passage.test.title) %></p>
           <p><%= link_to t('.back'), root_path %></p>
         <% end %>
+        <div style="border: 2px solid red">
+          <%= content_tag :p, 'Timer',
+                              class: 'timer',
+                              data: { time_out: (TestPassage.first.created_at.to_datetime + 15.minutes).to_i,
+                                      time_now: DateTime.now.to_i} %>
+        </div>
       </div>
     </div>
   </div>
