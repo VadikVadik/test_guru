@@ -4,11 +4,17 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[ show result update gist ]
 
   def show
-    
+
   end
 
   def result
 
+    @new_badges = [current_user.hand_first_try_badge(@test_passage),
+                   current_user.hand_level_badge(@test_passage),
+                   current_user.hand_category_badge(@test_passage)]
+
+    @new_badges.delete(nil)
+    
   end
 
   def update
