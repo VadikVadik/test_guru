@@ -4,7 +4,7 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[ show result update gist ]
 
   def show
-
+    
   end
 
   def result
@@ -12,7 +12,8 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+
+    @test_passage.accept!(params[:answer_ids]) unless params[:answer_ids].nil?
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now

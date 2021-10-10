@@ -14,6 +14,15 @@ ru:
         level: "Уровень"
         category_id: "Категория"
 
+  users:
+    feedbacks:
+      new:
+        header: "Форма обратной связи"
+        back: "Назад"
+      form:
+        message: "Текст"
+        submit: "Отправить отзыв"
+
   tests:
     index:
       header: "Доступные тесты"
@@ -37,6 +46,9 @@ ru:
       question: "Вопрос %{current_question} из %{questions_amount}"
       next: "Следующий вопрос"
       gist: "Добавить вопрос в Gist"
+      no_questions: "Для теста %{title} не добавлены вопросы"
+      back: "Назад"
+      no_answer_checked: "Необходимо выбрать вариант ответа"
     gist:
       success: "Gist усешно сохранен: %{url}"
       failure: "Во время сохранения Gist произошла ошибка"
@@ -95,3 +107,7 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  users_mailer:
+    feedback:
+      subject: "Новый отзыв от пользователя TestGuru"

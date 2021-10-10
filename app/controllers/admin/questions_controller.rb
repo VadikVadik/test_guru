@@ -7,7 +7,7 @@ class Admin::QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    redirect_to @test
+    redirect_to admin_test_path(@test)
   end
 
   def show
@@ -22,7 +22,7 @@ class Admin::QuestionsController < ApplicationController
     question = @test.questions.new(question_params)
 
     if question.save
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
@@ -34,12 +34,13 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     @question.update(question_params)
-    redirect_to test_questions_path(@question.test)
+    redirect_to admin_test_path(@question.test)
   end
 
   def destroy
+    @test = @question.test
     @question.destroy
-    redirect_to test_questions_path(@question.test)
+    redirect_to admin_test_path(@test)
   end
 
   private

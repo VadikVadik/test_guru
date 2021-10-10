@@ -1,0 +1,12 @@
+<%= form_with url: users_feedbacks_path, local: true do |form| %>
+  <%= render 'shared/errors', resource: current_user  %>
+
+  <div class="form-group">
+    <p><%= form.label :email %>
+    <%= form.email_field :email, id: :email, value: current_user.email, class: 'form-control'  %></p>
+    <p><%= form.label :message, t('.message') %>
+    <%= form.text_area :message, id: :message, class: 'form-control'  %></p>
+  </div>
+
+  <p><%= form.submit t('.submit'), class: 'btn btn-primary' %></p>
+<% end %>

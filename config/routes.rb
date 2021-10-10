@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :users, path: :gurus do
+    resources :feedbacks, only: [:new, :create]
+  end
+
   namespace :admin do
     resources :gists, only: :index
     resources :tests do
