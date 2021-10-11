@@ -8,13 +8,9 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-
-    @new_badges = [current_user.hand_first_try_badge(@test_passage),
-                   current_user.hand_level_badge(@test_passage),
-                   current_user.hand_category_badge(@test_passage)]
-
-    @new_badges.delete(nil)
-    
+    badges = BadgeIssuingService.new(current_user, @test_passage)
+    badges.issue
+    @new_badges = badges.issued
   end
 
   def update
