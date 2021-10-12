@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 admin = Admin.find(1)
 
+Badge.create(title: "Прохождение теста с первой попытки", file: "first-try.jpg", rule: "first_try", value: "done")
+Badge.create(title: "Прохождение всех тестов 1 уровня", file: "level-1.jpg", rule: "level", value: "1")
+Badge.create(title: "Прохождение всех тестов 2 уровня", file: "level-2.jpg", rule: "level", value: "2")
+Badge.create(title: "Прохождение всех тестов 3 уровня", file: "level-3.jpg", rule: "level", value: "3")
+Badge.create(title: "Прохождение всех тестов из категории Кино", file: "all-movies.jpg", rule: "category", value: "Кино")
+Badge.create(title: "Прохождение всех тестов из категории Сериалы", file: "all-series.jpg", rule: "category", value: "Сериалы")
+Badge.create(title: "Прохождение всех тестов из категории Мультфильмы", file: "all-cartoons.jpg", rule: "category", value: "Мультфильмы")
+
 category_movie = Category.create(title: "Кино")
 category_series = Category.create(title: "Сериалы")
 category_cartoons = Category.create(title: "Мультфильмы")

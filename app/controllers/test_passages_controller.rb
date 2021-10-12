@@ -4,11 +4,13 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[ show result update gist ]
 
   def show
-    
+
   end
 
   def result
-
+    badges = BadgeIssuingService.new(current_user, @test_passage)
+    badges.call
+    @new_badges = badges.issued
   end
 
   def update

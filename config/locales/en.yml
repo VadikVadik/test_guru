@@ -22,6 +22,10 @@ en:
       form:
         message: "Text"
         submit: "Send feedback"
+    badges:
+      index:
+        header: "Badges received"
+        back: "Back"
 
   tests:
     index:
@@ -34,6 +38,11 @@ en:
     _test:
       start: "Go"
 
+  badges:
+    index:
+      header: "All badges"
+      back: "Back"
+
   test_passages:
     result:
       header: "Test %{title} was completed!"
@@ -41,6 +50,7 @@ en:
       fail: "You didn't pass the test."
       result: "Your result: %{total}%"
       all: "All tests"
+      new_badges: "New badge!"
     show:
       header: "Passing the %{title} Test"
       question: "Question %{current_question} of %{questions_amount}"

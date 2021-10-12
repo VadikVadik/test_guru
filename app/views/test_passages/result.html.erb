@@ -9,6 +9,14 @@
         <p><%= t('.success') %></p>
         <p class="text-success"><%= t('.result', total: @test_passage.result) %></p>
       </div>
+        <% if !@new_badges.empty? %>
+        <div>
+          <p><%= t('.new_badges') %></p>
+          <% @new_badges.each do |badge| %>
+            <%= image_tag("/badges/#{badge.file}", size: "300x400", alt: "Бэйдж за #{badge.title}") %>
+          <% end %>
+        </div>
+        <% end %>
       <% else %>
       <div class="card-body">
         <p><%= t('.fail') %></p>

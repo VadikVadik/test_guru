@@ -22,6 +22,10 @@ ru:
       form:
         message: "Текст"
         submit: "Отправить отзыв"
+    badges:
+      index:
+        header: "Полученные бейджи"
+        back: "Назад"
 
   tests:
     index:
@@ -31,8 +35,16 @@ ru:
       level: "Уровень сложности"
       questions: "Вопросы"
       action: "Действие"
+      badges: "Бэйджи"
+      all_badges: "Все"
+      current_badges: "Полученные"
     _test:
       start: "Начать"
+
+  badges:
+    index:
+      header: "Доступные бейджи"
+      back: "Назад"
 
   test_passages:
     result:
@@ -41,6 +53,7 @@ ru:
       fail: "Вы провалили тест."
       result: "Ваш результат: %{total}%"
       all: "Все тесты"
+      new_badges: "Новое достижение!"
     show:
       header: "Прохождение теста: %{title}"
       question: "Вопрос %{current_question} из %{questions_amount}"

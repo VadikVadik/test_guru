@@ -17,8 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index
+
   namespace :users, path: :gurus do
     resources :feedbacks, only: [:new, :create]
+    resources :badges, only: :index
   end
 
   namespace :admin do

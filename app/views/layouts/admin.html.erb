@@ -11,11 +11,15 @@
   </head>
 
   <body>
-    <%= render 'admin/nav' %>
-    <div class="container">
-      <%= render 'shared/flash' %>
-      <%= yield %>
-      <%= render 'shared/footer' %>
-    </div>
+    <header>
+      <%= render 'admin/nav' %>
+    </header>
+    <main class="main-container">
+      <div class="container">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
+    </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

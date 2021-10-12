@@ -18,5 +18,14 @@
         <%= render @tests %>
       </table>
     </div>
+    <div class="">
+      <h2><%= t('.badges') %></h2>
+      <div class="">
+        <%= link_to t('.all_badges'), badges_path %>
+      </div>
+      <div class="">
+        <%= link_to t('.current_badges'), users_badges_path %>
+      </div>
+    </div>
   </div>
 </div>
