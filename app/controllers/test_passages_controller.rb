@@ -9,7 +9,7 @@ class TestPassagesController < ApplicationController
 
   def result
     badges = BadgeIssuingService.new(current_user, @test_passage)
-    badges.issue
+    badges.call
     @new_badges = badges.issued
   end
 
