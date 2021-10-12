@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_10_09_115753) do
   create_table "badges", force: :cascade do |t|
     t.string "title"
     t.string "file"
+    t.string "rule"
+    t.string "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "criteria"
@@ -66,10 +68,11 @@ ActiveRecord::Schema.define(version: 2021_10_09_115753) do
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "current_question_id"
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.bigint "current_question_id"
     t.integer "correct_questions", default: 0
+    t.boolean "success", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
