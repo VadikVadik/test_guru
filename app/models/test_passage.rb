@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).index(current_question) + 1
   end
 
+  def set_time_out
+    (created_at.to_datetime + test.duration.minutes).to_i
+  end
+
   private
 
   def correct_answer?(answer_ids)

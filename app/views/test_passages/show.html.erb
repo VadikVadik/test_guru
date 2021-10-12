@@ -35,6 +35,14 @@
           <p><%= t('.no_questions', title: @test_passage.test.title) %></p>
           <p><%= link_to t('.back'), root_path %></p>
         <% end %>
+        <% if @test_passage.test.timer %>
+        <div class="timer-container">
+          <%= content_tag :p, '',
+                              class: 'timer',
+                              data: { time_out: @test_passage.set_time_out } %>
+          <%= link_to "TimeOut", result_test_passage_path(@test_passage), class: "time-out" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
