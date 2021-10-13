@@ -4,7 +4,7 @@
       <h1 class="card-header">
         <%= t('.header', title: @test_passage.test.title) %>
       </h1>
-      <% if @test_passage.success? %>
+      <% if @test_passage.success %>
       <div class="card-body">
         <p><%= t('.success') %></p>
         <p class="text-success"><%= t('.result', total: @test_passage.result) %></p>
@@ -17,6 +17,11 @@
           <% end %>
         </div>
         <% end %>
+      <% elsif @test_passage.time_out? %>
+        <div class="card-body">
+          <p><%= t('.fail') %></p>
+          <p class="text-danger"><%= t('.time_out') %></p>
+        </div>
       <% else %>
       <div class="card-body">
         <p><%= t('.fail') %></p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_095309) do
+ActiveRecord::Schema.define(version: 2021_10_13_104030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_10_09_095309) do
     t.string "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "criteria"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -71,9 +72,9 @@ ActiveRecord::Schema.define(version: 2021_10_09_095309) do
     t.bigint "test_id", null: false
     t.bigint "current_question_id"
     t.integer "correct_questions", default: 0
-    t.boolean "success", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "success", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_10_09_095309) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
     t.integer "author_id"
+    t.integer "duration"
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true

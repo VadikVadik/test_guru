@@ -54,6 +54,7 @@ ru:
       result: "Ваш результат: %{total}%"
       all: "Все тесты"
       new_badges: "Новое достижение!"
+      time_out: "Время вышло!"
     show:
       header: "Прохождение теста: %{title}"
       question: "Вопрос %{current_question} из %{questions_amount}"
