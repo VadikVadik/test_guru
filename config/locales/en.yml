@@ -51,6 +51,7 @@ en:
       result: "Your result: %{total}%"
       all: "All tests"
       new_badges: "New badge!"
+      time_out: "Time Out!"
     show:
       header: "Passing the %{title} Test"
       question: "Question %{current_question} of %{questions_amount}"

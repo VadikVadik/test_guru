@@ -17,6 +17,11 @@
           <% end %>
         </div>
         <% end %>
+      <% elsif @test_passage.time_out? %>
+        <div class="card-body">
+          <p><%= t('.fail') %></p>
+          <p class="text-danger"><%= t('.time_out') %></p>
+        </div>
       <% else %>
       <div class="card-body">
         <p><%= t('.fail') %></p>

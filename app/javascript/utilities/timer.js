@@ -9,14 +9,14 @@ document.addEventListener('turbolinks:load', function () {
 
 function showCountdown(timer, timeOut) {
   var timer = document.querySelector('.timer')
-  var timeOut = document.querySelector('.time-out')
+  var testPassageForm = document.querySelector('.test-passage-form')
 
   if (timer) {
     var minutes = Math.floor(timeDiff(timer)/60)
     var secundes = Math.floor(timeDiff(timer)%60)
 
       if ((minutes + secundes) == 0) {
-        timeOut.click()
+        testPassageForm.requestSubmit()
       }
 
     timer.innerHTML = addZero(minutes) + ":" + addZero(secundes)

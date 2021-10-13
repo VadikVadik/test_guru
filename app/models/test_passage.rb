@@ -13,7 +13,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= POSITIVE_RESULT
+    result >= POSITIVE_RESULT && !time_out?
   end
 
   def accept!(answer_ids)
@@ -35,6 +35,10 @@ class TestPassage < ApplicationRecord
 
   def set_time_out
     (created_at.to_datetime + test.duration.minutes).to_i
+  end
+
+  def time_out?
+    (set_time_out - DateTime.now.to_i) <= 1
   end
 
   private
